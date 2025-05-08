@@ -8,21 +8,21 @@ const features = [
     title: "Marketing Automation 101",
     type: "Workshop",
     date: "May 15, 2025",
-    image: "https://example.com/marketing-automation.jpg",
+    image: "img1.jpg",
   },
   {
     id: 2,
     title: "The Future of Customer Data",
     type: "Webinar",
     date: "May 22, 2025",
-    image: "https://example.com/customer-data.jpg",
+    image: "img2.jpg",
   },
   {
     id: 3,
     title: "Content Strategy Trends 2025",
     type: "Article",
     date: "May 7, 2025",
-    image: "https://example.com/content-strategy.jpg",
+    image: "img3.jpg",  
   },
 ];
 
