@@ -1,6 +1,7 @@
 // React layout for NZ Marketing Association - One Page Site using regular CSS
 import React from "react";
 import "./NZMarketingAssociationPage.css";
+import heroImage from './assets/hero-image.jpg';
 
 const features = [
   {
@@ -42,7 +43,8 @@ export default function NZMarketingAssociationPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero" style={{ backgroundImage: 'url(https://example.com/nz-marketing-hero.jpg)' }}>
+      <section className="hero">
+        <img src={heroImage} alt="Hero banner" className="hero-background-image" />
         <div className="hero-content">
           <h2 className="hero-title">Empowering New Zealand’s Marketing Professionals</h2>
           <p className="hero-subtext">Join the community driving marketing excellence across Aotearoa.</p>
