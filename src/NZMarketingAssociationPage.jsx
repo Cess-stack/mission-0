@@ -2,6 +2,7 @@
 import React from "react";
 import "./NZMarketingAssociationPage.css";
 import heroImage from './assets/hero-image.jpg';
+import logo from './assets/logo.jpg';
 
 const features = [
   {
@@ -32,7 +33,7 @@ export default function NZMarketingAssociationPage() {
     <div className="page-wrapper">
       {/* Header */}
       <header className="header">
-        <h1 className="header-title">NZ Marketing Association</h1>
+      <img src={logo} alt="NZ Marketing Association Logo" className="header-logo" />
         <nav className="nav">
           <a href="#" className="nav-link">Events</a>
           <a href="#" className="nav-link">Resources</a>
