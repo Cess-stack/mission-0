@@ -88,6 +88,12 @@
     display: flex;
     max-width: 400px;
     margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+  }
+
+  .search-button:hover {
+    background-color: #B80000; /* Darker shade of #D40000 */
   }
   
   .search-input {
