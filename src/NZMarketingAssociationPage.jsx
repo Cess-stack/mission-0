@@ -1,5 +1,5 @@
 // React layout for NZ Marketing Association - One Page Site using regular CSS
-import React from "react";
+import React, { useState } from "react";
 import "./NZMarketingAssociationPage.css";
 import heroImage from './assets/hero-image.jpg';
 import logo from './assets/logo.jpg';
@@ -29,18 +29,30 @@ const features = [
 ];
 
 export default function NZMarketingAssociationPage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="page-wrapper">
       {/* Header */}
       <header className="header">
-      <img src={logo} alt="NZ Marketing Association Logo" className="header-logo" />
-        <nav className="nav">
-          <a href="#" className="nav-link">Events</a>
-          <a href="#" className="nav-link">Resources</a>
-          <a href="#" className="nav-link">Training</a>
-          <a href="#" className="nav-link">About</a>
-        </nav>
-        <button className="login-button">Login</button>
+        <img src={logo} alt="NZ Marketing Association Logo" className="header-logo" />
+        <button
+          className="hamburger-button"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? "✕" : "☰"}
+        </button>
+        <div className={`nav-wrapper ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
+          <nav className="nav">
+            <a href="#" className="nav-link">Events</a>
+            <a href="#" className="nav-link">Resources</a>
+            <a href="#" className="nav-link">Training</a>
+            <a href="#" className="nav-link">About</a>
+          </nav>
+          <button className="login-button">Login</button>
+        </div>
       </header>
 
       {/* Hero Section */}
