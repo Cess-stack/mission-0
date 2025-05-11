@@ -1,9 +1,10 @@
-// React layout for NZ Marketing Association - One Page Site using regular CSS
-import React, { useState } from "react";
+
+import React, { useState } from "react"; // Import useState for managing mobile menu toggle
 import "./NZMarketingAssociationPage.css";
 import heroImage from './assets/hero-image.jpg';
 import logo from './assets/logo.jpg';
 
+// Static data for feature cards 
 const features = [
   {
     id: 1,
@@ -29,21 +30,26 @@ const features = [
 ];
 
 export default function NZMarketingAssociationPage() {
+  // State for managing visibility of mobile navigation menu
+  // isMobileMenuOpen: boolean, true if menu is open, false otherwise
+  // setIsMobileMenuOpen: function to toggle the state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="page-wrapper">
-      {/* Header */}
+    <div className="page-wrapper"> {/* Main container for the entire page */}
       <header className="header">
         <img src={logo} alt="NZ Marketing Association Logo" className="header-logo" />
+        {/* Hamburger Button: Visible only on mobile screens to toggle the navigation menu  */}
         <button
           className="hamburger-button"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Toggles the mobile menu state
+          aria-label="Toggle menu" // Provides a label for screen readers
+          aria-expanded={isMobileMenuOpen} 
         >
-          {isMobileMenuOpen ? "✕" : "☰"}
+          {isMobileMenuOpen ? "✕" : "☰"} {/* Changes icon based on menu state: ✕ for close, ☰ for open */}
         </button>
+        {/* Groups main navigation links and login button */}
+        {/* Conditionally adds 'mobile-menu-open' class to enable specific styling when menu is open on mobile */}
         <div className={`nav-wrapper ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}>
           <nav className="nav">
             <a href="#" className="nav-link">Events</a>
@@ -68,9 +74,10 @@ export default function NZMarketingAssociationPage() {
         </div>
       </section>
 
-      {/* Feature Cards */}
+      {/* Feature Cards Section*/}
       <section className="features-section">
         <div className="features-grid">
+          {/* renders feature cards from the 'features' array */}
           {features.map((item) => (
             <div key={item.id} className="feature-card">
               <img src={item.image} alt={item.title} className="feature-image" />
