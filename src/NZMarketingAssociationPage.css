@@ -14,12 +14,19 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Added for mobile menu positioning */
   }
   
   .header-logo {
     width: 100px;
     height: auto;
   } 
+  
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Adjust as per original spacing between nav and login button */
+  }
   
   .nav {
     display: flex;
@@ -45,6 +52,19 @@
     border-radius: 4px;
     background-color: #D40000;
     color: white; 
+  }
+  
+  /* Hamburger Button - Hidden by default on larger screens */
+  .hamburger-button {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: #1f2937; /* Dark color for the icon */
+    font-size: 1.75rem; /* Adjust size of ☰ and ✕ */
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    z-index: 1100; /* Ensure it's above mobile menu if they could overlap */
+    line-height: 1; /* Ensure tight fit for icon characters */
   }
   
   /* Hero */
@@ -161,3 +181,52 @@
     color: #6b7280;
   }
   
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    .nav-wrapper {
+      display: none; /* Hide nav-wrapper by default on mobile */
+      flex-direction: column;
+      align-items: stretch; /* Stretch items to full width */
+      position: absolute;
+      top: 100%; /* Position below the header */
+      left: 0;
+      right: 0;
+      background-color: #f9fafb; /* Slightly different background for dropdown */
+      padding: 1rem;
+      border-top: 1px solid #e5e7eb; /* Separator line */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      z-index: 1000;
+      gap: 1rem;
+    }
+
+    .nav-wrapper.mobile-menu-open {
+      display: flex; /* Show when mobile menu is open */
+    }
+
+    .hamburger-button {
+      display: block; /* Show hamburger button on mobile */
+    }
+
+    /* Adjustments for nav and links within the mobile menu */
+    .nav-wrapper .nav {
+      flex-direction: column; /* Stack nav links vertically */
+      align-items: stretch; /* Stretch nav block */
+      width: 100%;
+      gap: 0.75rem; /* Space between stacked nav links */
+    }
+
+    .nav-wrapper .nav-link {
+      width: 100%; /* Make nav links full width */
+      text-align: center;
+      padding: 0.75rem 1rem; /* Adjust padding for better tap targets */
+      margin-bottom: 0; /* Remove bottom margin if using gap on parent .nav */
+      /* Colors and borders are inherited from global .nav-link styles, which is good */
+    }
+
+    .nav-wrapper .login-button {
+      width: 100%; /* Make login button full width */
+      margin-top: 0.5rem; /* Optional: adds a bit more space above login button */
+      text-align: center;
+      /* Colors and borders are inherited from global .login-button styles */
+    }
+  }
