@@ -1,3 +1,6 @@
+// This component renders the main page for the NZ Marketing Association.
+// It displays information using a header, a hero image, feature cards, 
+// and manages the mobile navigation menu.
 
 import React, { useState } from "react"; // Import useState for managing mobile menu toggle
 import "./NZMarketingAssociationPage.css";
