@@ -25,12 +25,13 @@
   .nav-wrapper {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Adjust as per original spacing between nav and login button */
+    gap: 1.5rem; 
   }
   
   .nav {
     display: flex;
     gap: 1rem;
+    
   }
   
   .nav-link {
@@ -40,6 +41,7 @@
     padding: 0.25rem 1rem;
     border: 1px solid #D40000;
     border-radius: 4px;
+    text-align: center; 
   }
   
   .nav-link:hover {
